@@ -38,12 +38,6 @@ tr:nth-child(even) {
 		  		</tr>  	
 			</c:forEach> 
 		</table>
-		
-		<br />
-		
-		
-		<form	action="home" method="POST">
-			<input type="submit" value="Home">
-		</form>
+
 </body>
 </html>

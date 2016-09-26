@@ -20,6 +20,12 @@ public class ClienteDAO {
 	        manager.persist(cliente);
 	    }
 	    
+	    public boolean consultar(Cliente cliente){
+	    	return manager.contains(cliente);
+	    }
+	    
+	    
+	    
 	
 	}
 

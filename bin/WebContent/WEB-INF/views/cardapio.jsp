@@ -2,6 +2,7 @@
 
 <html>
 <head>
+
 <style>
 table {
     font-family: arial, sans-serif;
@@ -21,16 +22,15 @@ tr:nth-child(even) {
 </style>
 <title>Insert title here</title>
 </head>
-<body>
-		<h1>Quartos</h1>
+	<body>
+		<h1>Cardapio</h1>
 		<table>
 			<tr>
-			    <th>Quarto</th>
-			    <th>Valor</th> 
-			    <th>Tempo</th> 
-			    
+			    <th>Item</th>
+			    <th>Preco</th> 
+			    <th>Quantidade</th>
 			</tr>
-			<c:forEach var="item" items="${quarto}">
+			<c:forEach var="item" items="${cardapio}">
 		  		<tr>
 		  			<td>${item.name}</td>
 		  			<td>R$ ${item.preco}0</td>
@@ -38,12 +38,5 @@ tr:nth-child(even) {
 		  		</tr>  	
 			</c:forEach> 
 		</table>
-		
-		<br />
-		
-		
-		<form	action="home" method="POST">
-			<input type="submit" value="Home">
-		</form>
-</body>
+	</body>
 </html>

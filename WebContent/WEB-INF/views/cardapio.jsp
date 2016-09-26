@@ -28,15 +28,38 @@ tr:nth-child(even) {
 			<tr>
 			    <th>Item</th>
 			    <th>Preco</th> 
-			    <th>Quantidade</th>
 			</tr>
 			<c:forEach var="item" items="${cardapio}">
 		  		<tr>
 		  			<td>${item.name}</td>
 		  			<td>R$ ${item.preco}0</td>
-		  			<td><input type='number' id='quantidade'></td>
 		  		</tr>  	
 			</c:forEach> 
 		</table>
+		
+			<br />
+			
+		<select>
+			<c:forEach var="item" items="${cardapio}">
+		  			<option value="${item.name}">${item.name}</option>
+			</c:forEach> 
+		</select> 
+				<br />
+		
+				<br />
+		
+			
+		<c:forEach var="item" items="${cardapio}">
+	  			<input type="checkbox" value="${item.name}">${item.name}
+		</c:forEach> 
+			
+			
+		<br />
+
+		<br />
+		
+		<form	action="home" method="POST">
+			<input type="submit" value="Home">
+		</form>
 	</body>
 </html>

@@ -20,11 +20,19 @@ public class MotelController {
     @Autowired
     private ClienteDAO dao;
     
-    @RequestMapping("/")
+    @RequestMapping("home")
     public String acessarFormDeCadastro() {
     	log.info("Acessando a HOME");
 
         return "index";
+    }
+    
+    @RequestMapping("/dadosCliente")
+    public String dadosCliente(Cliente cpf){
+    	
+    	System.out.println(dao.consultar(cpf));
+    	
+    	return "dadosCliente";
     }
     
     @RequestMapping("/consultarClientes")
@@ -37,6 +45,8 @@ public class MotelController {
     @RequestMapping("/clienteCadastrado")
     public ModelAndView cadastrar(Cliente cliente) {
     	log.info("Acessando a HOME");
+    	
+    	System.out.println(dao.consultar(cliente));
 
     	dao.gravar(cliente);
     	ModelAndView mv = new ModelAndView("sucesso");
