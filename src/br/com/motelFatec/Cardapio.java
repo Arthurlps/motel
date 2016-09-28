@@ -1,5 +1,8 @@
 package br.com.motelFatec;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public enum Cardapio {
 	CERVEJA(6.00),
 	REFRIGERANTE(5.00),

@@ -36,20 +36,30 @@ public class MotelController {
     }
     
     @RequestMapping("/consultarClientes")
-    public String acessarFormDeCadastro(String nome) {
-    	System.out.println("acessou");
+    public ModelAndView acessarFormDeCadastro(Long cpf) {
     	
-        return "index";
+    	ModelAndView mv = new ModelAndView("dadosCliente");
+    	
+    	try{
+        	Cliente clienteDB = dao.buscar(cpf);
+        	mv.addObject("cliente", clienteDB);
+    	} catch(Exception e){
+    		log.error(e);
+    	}
+    	
+    	log.info("Acessando o banco para efetuar busca de clientes");
+    	
+        return mv;
     }
     
     @RequestMapping("/clienteCadastrado")
-    public ModelAndView cadastrar(Cliente cliente) {
+    public ModelAndView cadastrar(Cliente cliente, Cardapio produto) {
     	log.info("Acessando a HOME");
     	
-    	System.out.println(dao.consultar(cliente));
-
     	dao.gravar(cliente);
-    	ModelAndView mv = new ModelAndView("sucesso");
+    	ModelAndView mv = new ModelAndView("home");
+
+    	
     	mv.addObject("cliente", cliente);
 
         return mv;
@@ -72,7 +82,7 @@ public class MotelController {
     @RequestMapping("/cadastrar")
     public String login() {
     	
-    	System.out.println("Acessando cadastro");
+    	log.info("Direcionando para formulario de cadastro");
         return "formularioCadastro";
     }
 

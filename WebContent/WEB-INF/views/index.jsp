@@ -7,7 +7,7 @@
 	<h1>Sistema - Motel Mais por Menos</h1>
 	
 	<h3>Consultar conta</h3>
-	<form action="dadosCliente" Method="POST">
+	<form action="consultarClientes" Method="POST">
 		Digite o numero de CPF: <input type="text" name="cpf">
 		<input type="submit" value="Acessar">
 	</form>

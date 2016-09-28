@@ -8,7 +8,7 @@
 	<br />
 	
 	Clique aqui para acessar o sistema
-	<form action="consultarClientes">
+	<form action="home">
 		<input type="submit" value="Acessar">
 	</form>
 </body>
